@@ -41,21 +41,24 @@
         grid-template-columns: 1fr;
     }
 
-    .card img {
+    .card {
         width: 100%;
-        height: auto;
+        max-width: 100%;
     }
 
+    .card img,
     #information-1 img,
     #information-2 img,
     #information-3 img,
     #information-4 img {
-        width: 90%;
+        width: 100%;
         height: auto;
     }
 
     #home h2 {
-        font-size: 4.5rem;
+        font-size: 4rem;
+        width: 100%;
+        word-break: break-word;
     }
 }
 
@@ -68,19 +71,20 @@
     .nav ul {
         flex-direction: column;
         align-items: center;
+        padding: 0.5rem;
+        font-size: 1rem;
     }
 
     .card {
-        max-width: 90%;
+        max-width: 100%;
     }
 
     #home h2 {
-        min-width: 300px;
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     #client-logos-div {
-        gap: 1rem;
+        gap: 1.5rem;
     }
 
     #client-logos-div svg {
@@ -96,6 +100,56 @@
     }
 
     #about-us {
-        padding: 0;
+        padding: 1rem;
+    }
+
+    #about-us h2,
+    #news h2 {
+        font-size: 2rem;
+    }
+
+    #news {
+        padding: 1rem;
+    }
+
+    #games {
+        padding: 1rem;
+    }
+
+    #home {
+        padding: 1rem;
+    }
+}
+
+/* Específico para pantallas muy pequeñas (ej. 320px) */
+@media (max-width: 360px) {
+    h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    #home h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .nav ul {
+        padding: 0.25rem;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .card h2,
+    .card p,
+    .card button {
+        font-size: 0.9rem;
+    }
+
+    #client-logos-div {
+        gap: 1rem;
+    }
+
+    #footer-rights {
+        font-size: 0.8rem;
     }
 }
