@@ -2,8 +2,9 @@
     font-family: "Roboto Condensed", sans-serif;
     margin: 0;
     padding: 0;
-    font: 16px;
+    font-size: 16px;
     box-sizing: border-box;
+    outline: 1px solid red !important; /*TEST*/
 }
 
 html, body {
@@ -20,6 +21,8 @@ html, body {
         "main"
         "footer";
     grid-template-rows: auto 1fr auto;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 /* ---HEADER--- */
@@ -160,7 +163,7 @@ main {
     color: #ffffff;
 }
 
-.card {
+.game-card {
     background-color: #212121;
     color: #ffffff;
     border: 1px solid #cccccc;
@@ -172,31 +175,32 @@ main {
     font-family: sans-serif;
 }
 
-.card {
+.game-card {
     transform: translateZ(0) translateY(0);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.card:hover {
+.game-card:hover {
     transform: translateZ(50px) translateY(-12px);
     box-shadow: 0 20px 20px -10px rgba(0, 0, 0, 0.50);
 }
 
-.card h2,
-.card p,
-.card button {
+.game-card h2,
+.game-card p,
+.game-card button {
     margin: 5px;
 }
 
-.card img {
-    width: 300px;
-    height: 200px;
+.game-card img {
+    width: 100%;
+    height: auto;
     border-radius: 10px;
     margin: 5px 0 5px 0;
+    max-width: 100%;
 }
 
-.card button {
+.game-card button {
     color: #ffffff;
     background-color: #5d5da5;
     padding: 8px 12px;
@@ -212,6 +216,8 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
 }
 
 #cart-container {

@@ -61,7 +61,7 @@ function showGames(games) {
         const price = pricesPerSlug[slug] !== undefined ? `$${pricesPerSlug[slug].toFixed(2)}` : "Not available";
 
         const card = document.createElement('div');
-        card.className = 'card';
+        card.className = 'game-card';
         card.innerHTML = `
             <h3>${game.name}</h2>
             ${game.background_image ? `<img src="${game.background_image}" alt="${game.name}">` : ''}
