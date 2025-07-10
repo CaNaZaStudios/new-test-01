@@ -55,7 +55,7 @@
     }
 
     #home h2 {
-        font-size: 3.5rem;
+        font-size: 4.5rem;
     }
 }
 
@@ -75,11 +75,12 @@
     }
 
     #home h2 {
+        min-width: 300px;
         font-size: 2.5rem;
     }
 
     #client-logos-div {
-        gap: 2rem;
+        gap: 1rem;
     }
 
     #client-logos-div svg {
@@ -92,5 +93,9 @@
 
     #footer-rights {
         font-size: 0.9rem;
+    }
+
+    #about-us {
+        padding: 0;
     }
 }
