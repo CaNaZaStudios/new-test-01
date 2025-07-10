@@ -1,0 +1,546 @@
+* {
+    font-family: "Roboto Condensed", sans-serif;
+    margin: 0;
+    padding: 0;
+    font: 16px;
+}
+
+/* LAYOUT */
+
+#layout {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    grid-template-rows: auto 1fr auto;
+}
+
+/* ---HEADER--- */
+
+header {
+    grid-area: header;
+    display: grid;
+    grid-template-areas:
+        "logo"
+        "nav";
+    grid-template-columns: auto 1fr;
+    width: 100vw;
+    align-items: center;
+    position: fixed;
+    background: linear-gradient(180deg, #5459AC, 50%, #434689);
+    border-bottom: 2px solid white;
+    z-index: 10;
+}
+
+/* NAV */
+
+.nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+header a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+    padding-left: 1rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+header li {
+    list-style: none;
+}
+
+/* LOGO */
+
+h1 {
+    font-size: 3rem;
+}
+
+/* ---MAIN--- */
+
+main {
+    grid-area: main;
+}
+
+/* SECCION INICIO */
+
+#home {
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(ellipse at bottom, #211f21, #1c1c1c, #000000);
+    background-size: cover;
+}
+
+#home h2 {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 6rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+
+    background: linear-gradient(270deg, #b526f3, #feab3a, #f35626);
+    background-size: 400% 400%;
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    animation: gradientShift 8s ease infinite, text-focus-in 1s ease both;
+    -webkit-animation: gradientShift 8s ease infinite, text-focus-in 1s ease both;
+}
+
+/* Gradiente animado (background) */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Aparición con blur */
+@keyframes text-focus-in {
+    0% {
+        filter: blur(12px);
+        opacity: 0;
+    }
+    100% {
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes text-focus-in {
+    0% {
+        -webkit-filter: blur(12px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-filter: blur(0);
+        opacity: 1;
+    }
+}
+
+/* SECCION JUEGOS */
+
+#games {
+    background-color: gray;
+    padding-bottom: 40px;
+}
+
+#games h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 4rem;
+    color: #ffffff;
+}
+
+.card {
+    background-color: #212121;
+    color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 15px;
+    padding: 16px;
+    margin: 16px;
+    max-width: 350px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    font-family: sans-serif;
+}
+
+.card {
+    transform: translateZ(0) translateY(0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover {
+    transform: translateZ(50px) translateY(-12px);
+    box-shadow: 0 20px 20px -10px rgba(0, 0, 0, 0.50);
+}
+
+.card h2,
+.card p,
+.card button {
+    margin: 5px;
+}
+
+.card img {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    margin: 5px 0 5px 0;
+}
+
+.card button {
+    color: #ffffff;
+    background-color: #5d5da5;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* CARRITO DE COMPRAS */
+
+.my-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#cart-container {
+    width: 90%;
+    background-color: #f0f4f8;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    top: 20px;
+    right: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+#cart-container h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #111;
+}
+
+#cart-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 12px 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#cart-list li {
+    padding: 6px 8px;
+    background-color: #fff;
+    margin-bottom: 6px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+#cart-total {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+#cart-container button {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+}
+
+#cart-container button:hover {
+    background-color: #d62828;
+}
+
+#cart-center {
+    display: flex;
+    justify-content: center;
+}
+
+/* SECCION SOBRE NOSOTROS */
+
+#about-us {
+    display: grid;
+    grid-template-areas: 
+        "title-about-us title-about-us"
+        "description-1 description-1"
+        "description-2 description-3"
+        "client-div client-div";
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #282828;
+}
+
+#about-us h2 {
+    grid-area: title-about-us;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 4rem;
+}
+
+#innovation-div {
+    grid-area: description-1;
+    margin: 4rem 0 4rem 0;
+}
+
+#creativity-div {
+    grid-area: description-2;
+    margin: 4rem 0 4rem 0;
+}
+
+#immersion-div {
+    grid-area: description-3;
+    margin: 4rem 0 4rem 0;
+}
+
+#innovation-div,
+#creativity-div,
+#immersion-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#innovation-div i,
+#creativity-div i,
+#immersion-div i {
+    color: white;
+    font-size: 9rem;
+    text-shadow: 3px 3px 15px black;
+    margin: 1rem;
+    position: relative;
+    transform-origin: center center;
+    animation: about-us-animation 3s linear infinite;
+}
+
+#innovation-div h3,
+#creativity-div h3,
+#immersion-div h3 {
+    color: #ffffff;
+    font-size: 3rem;
+}
+
+#innovation-div p,
+#creativity-div p,
+#immersion-div p {
+    color: #ffffff;
+    font-size: 1.5rem;
+    max-width: 600px;
+}
+
+/* CONTENEDOR DE LOGOS DE CLIENTES */
+
+#client-div {
+    grid-area: client-div;
+    display: flex;
+    justify-content: center;
+}
+
+#client-div h3 {
+    color: #ffffff;
+    font-size: 4rem;
+}
+
+#client-logos-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+    background-color: #000000;
+    padding: 4rem 0 4rem 0;
+}
+
+#client-logos-div svg {
+    transform: scale(1.0);
+    fill: #bababa;
+    opacity: 0.75;
+    width: 5rem;
+    transition: transform 0.5s ease, fill 0.5s ease, opacity 0.5s ease;
+}
+
+#client-logos-div svg:hover {
+    transform: scale(1.2);
+    fill: #ffffff;
+    opacity: 1;
+}
+
+/* ---NOTICIAS--- */
+
+#news {
+    display: grid;
+    grid-template-areas: 
+    "title-news title-news"
+    "information-1 information-2"
+    "information-3 information-4";
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+#news h2 {
+    grid-area: title-news;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+}
+
+#information-1 {
+    grid-area: information-1;
+}
+
+#information-2 {
+    grid-area: information-2;
+}
+
+#information-3 {
+    grid-area: information-3;
+}
+
+#information-4 {
+    grid-area: information-4;
+}
+
+#information-1,
+#information-2,
+#information-3,
+#information-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#information-1 h3,
+#information-2 h3,
+#information-3 h3,
+#information-4 h3 {
+    font-size: 2.5rem;
+}
+
+#information-1 img,
+#information-2 img,
+#information-3 img,
+#information-4 img {
+    width: 450px;
+    border-radius: 1rem;
+    margin: 2rem 0 2rem 0;
+}
+
+#information-1 p,
+#information-2 p,
+#information-3 p,
+#information-4 p {
+    font-size: 1.5rem;
+    max-width: 700px;
+}
+
+/* ---FOOTER--- */
+
+footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-areas: 
+        "footer-nav footer-rights footer-social-networks";
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px 0 10px 0;
+    background: linear-gradient(180deg, #121212, 50%, #282828);
+    border-top: 2px solid #ffffff;
+}
+
+#footer-nav {
+    grid-area: footer-nav;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer-rights {
+    grid-area: footer-rights;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #ffffff;
+}
+
+#footer-social-networks {
+    grid-area: footer-social-networks;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+footer li {
+    list-style: none;
+}
+
+/* KEYFRAMES - ANIMACION DE LOS ICONOS */
+
+@keyframes about-us-animation {
+    0% { 
+        transform: translateY(0px) rotate(0deg);
+    }
+    10% {
+        transform: translateY(1px) rotate(1deg);
+    }
+    20% {
+        transform: translateY(3px) rotate(3deg);
+    }
+    25% {
+        transform: translateY(5px) rotate(5deg);
+    }
+    30% {
+        transform: translateY(3px) rotate(3deg);
+    }
+    40% {
+        transform: translateY(1px) rotate(1deg);
+    }
+    50% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    60% {
+        transform: translateY(1px) rotate(-1deg);
+    }
+    70% {
+        transform: translateY(3px) rotate(-3deg);
+    }
+    75% {
+        transform: translateY(5px) rotate(-5deg);
+    }
+    80% {
+        transform: translateY(3px) rotate(-3deg);
+    }
+    90% {
+        transform: translateY(1px) rotate(-1deg);
+    }
+    100% { 
+        transform: translateY(0px) rotate(0deg); 
+    }
+}
